@@ -207,7 +207,7 @@ interface SOY2_PathBuilder{
  	/**
  	 * 他のURLへ移動
  	 */
- 	public static function jump(string $url){}
+ 	public static function jump(string $url=""){}
  	/**
  	 * 現在のURLを再読込（queryは変更可能）
  	 */
@@ -298,7 +298,7 @@ interface SOY2_PathBuilder{
  		$controller = self::init();
  		$controller->defaultPath = $path;
  	}
- 	public static function jump(string $path){
+ 	public static function jump(string $path=""){
  		$url = self::createLink($path, true);
  		header("Location: ".$url);
  		exit;
