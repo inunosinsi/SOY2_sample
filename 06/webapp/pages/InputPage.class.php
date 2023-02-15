@@ -6,7 +6,7 @@ class InputPage extends WebPage {
 		if(soy2_check_token()){
 			$session = SOY2ActionSession::getUserSession();
 			$session->setAttribute("soy2_sample", $_POST["name"]);
-			$session->setAttribute("page", 2);
+			$session->setAttribute("page", "Confirm");
 
 			SOY2PageController::jump("");
 		}

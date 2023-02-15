@@ -13,7 +13,6 @@ SOY2HTMLConfig::CacheDir(WEBAPP_DIR . "cache/");
 // SOY2HTMLConfig::PageDirで指定したディレクトリからページのクラスファイルを読み込む
 $page = SOY2HTMLFactory::createInstance("InputPage");
 
-// TopPage.class.php + TopPage.htmlから出力用のHTMLを組み立てる
 ob_start();
 $page->display();
 $html = ob_get_contents();

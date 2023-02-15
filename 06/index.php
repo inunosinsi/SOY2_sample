@@ -12,15 +12,11 @@ SOY2HTMLConfig::CacheDir(WEBAPP_DIR . "cache/");
 
 // SOY2HTMLConfig::PageDirで指定したディレクトリからページのクラスファイルを読み込む
 $session = SOY2ActionSession::getUserSession();
-switch($session->getAttribute("page")){
-	case "2":
-		$page = SOY2HTMLFactory::createInstance("ConfirmPage");
-		break;
-	default:
-		$page = SOY2HTMLFactory::createInstance("InputPage");
-}
+$pageType = $session->getAttribute("page");
+if(is_null($pageType)) $pageType = "Input";
 
-// TopPage.class.php + TopPage.htmlから出力用のHTMLを組み立てる
+$page = SOY2HTMLFactory::createInstance($pageType."Page");
+
 ob_start();
 $page->display();
 $html = ob_get_contents();

@@ -6,7 +6,7 @@ class ConfirmPage extends WebPage {
 		if(soy2_check_token()){
 			if(isset($_POST["back"])){
 				$session = SOY2ActionSession::getUserSession();
-				$session->setAttribute("page", 1);
+				$session->setAttribute("page", "Input");
 
 				SOY2PageController::jump("");
 			}				
