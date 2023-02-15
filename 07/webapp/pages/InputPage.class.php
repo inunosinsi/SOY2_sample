@@ -8,7 +8,7 @@ class InputPage extends WebPage {
 			$session->setAttribute("soy2_sample", $_POST["name"]);
 			$session->setAttribute("page", "Confirm");
 
-			SOY2PageController::jump();
+			SOY2PageController::redirect();
 		}
 	}
 

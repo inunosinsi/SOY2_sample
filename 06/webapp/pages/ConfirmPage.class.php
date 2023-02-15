@@ -8,7 +8,7 @@ class ConfirmPage extends WebPage {
 				$session = SOY2ActionSession::getUserSession();
 				$session->setAttribute("page", "Input");
 
-				SOY2PageController::jump("");
+				SOY2PageController::redirect();
 			}				
 		}
 	}

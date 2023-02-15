@@ -14,7 +14,7 @@ class ConfirmPage extends WebPage {
 				$session->setAttribute("page", "Complete");
 			}
 
-			SOY2PageController::jump();
+			SOY2PageController::redirect();
 		}
 	}
 

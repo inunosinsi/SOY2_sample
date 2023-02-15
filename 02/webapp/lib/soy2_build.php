@@ -303,7 +303,7 @@ interface SOY2_PathBuilder{
  		header("Location: ".$url);
  		exit;
  	}
- 	public static function redirect(string $path, bool $permanent=false){
+ 	public static function redirect(string $path="", bool $permanent=false){
  		if($permanent){
  			header("HTTP/1.1 301 Moved Permanently");
  		}
@@ -326,12 +326,12 @@ interface SOY2_PathBuilder{
  		if(is_null($builder)) $builder = new SOY2_DefaultClassPathBuilder();
  		return $builder;
  	}
- 	public static function createLink(string $path, bool $isAbsoluteUrl=false){
+ 	public static function createLink(string $path="", bool $isAbsoluteUrl=false){
  		$controller = self::init();
  		$pathBuilder = $controller->getPathBuilder();
  		return $pathBuilder->createLinkFromPath($path, $isAbsoluteUrl);
  	}
- 	public static function createRelativeLink(string $path, bool $isAbsoluteUrl=false){
+ 	public static function createRelativeLink(string $path="", bool $isAbsoluteUrl=false){
  		$controller = self::init();
  		$pathBuilder = $controller->getPathBuilder();
  		return $pathBuilder->createLinkFromRelativePath($path, $isAbsoluteUrl);
