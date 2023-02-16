@@ -15,11 +15,17 @@ class ConfirmPage extends WebPage {
 	}
 
 	function __construct(){
-		parent::__construct();
-
 		$session = SOY2ActionSession::getUserSession();
 		$value = $session->getAttribute("soy2_sample");
-		
+
+		// 値が無い時は確認画面を表示しない
+		if(is_null($value)) {
+			$session->setAttribute("page", "Input");
+			SOY2PageController::redirect();
+		}
+
+		parent::__construct();
+
 		$this->createAdd("form", "HTMLForm");
 
 		$this->createAdd("name_text", "HTMLLabel", array(
