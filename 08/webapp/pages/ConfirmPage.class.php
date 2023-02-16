@@ -20,7 +20,6 @@ class ConfirmPage extends WebPage {
 
 		// 値が無い時は確認画面を表示しない
 		if(is_null($value)) {
-			$session->setAttribute("page", "Input");
 			SOY2PageController::redirect();
 		}
 
