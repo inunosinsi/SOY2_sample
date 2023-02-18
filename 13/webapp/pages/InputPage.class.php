@@ -73,5 +73,10 @@ class InputPage extends WebPage {
 			"selected" => "peach"
 		));
 
+		$this->createAdd("fruits_required", "HTMLSelect", array(
+			"name" => "fruits",
+			"options" => $fruits,
+			"required" => true
+		));
 	}
 }
