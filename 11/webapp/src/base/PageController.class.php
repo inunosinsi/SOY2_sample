@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends SOY2PageController{
+class PageController extends SOY2PageController{
 
     function execute(){
 		// SOY2HTMLConfig::PageDirで指定したディレクトリからページのクラスファイルを読み込む

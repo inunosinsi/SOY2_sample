@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends SOY2PageController{
+class PageController extends SOY2PageController{
 
     function execute(){
 		$builder = $this->getPathBuilder();

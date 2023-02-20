@@ -11,5 +11,5 @@ SOY2HTMLConfig::PageDir(WEBAPP_DIR . "pages/");
 SOY2HTMLConfig::CacheDir(WEBAPP_DIR . "cache/");
 
 // init controller
-SOY2::import("base.SiteController");
-SOY2PageController::init("SiteController");
+SOY2::import("base.PageController");
+SOY2PageController::init("PageController");
