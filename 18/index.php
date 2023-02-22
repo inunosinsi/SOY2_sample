@@ -18,31 +18,31 @@ try{
 	var_dump($e);
 }
 
-$sql = "INSERT INTO soy2_sample (text) VALUES('hoge');";
+$sql = "INSERT INTO soy2_sample (text) VALUES(:text);";
 try{
-	$dao->executeQuery($sql);
+	$dao->executeQuery($sql, array(":text" => "hoge"));
 }catch(Exception $e){
 	var_dump($e);
 }
 
-$sql = "SELECT * FROM soy2_sample;";
+$sql = "SELECT * FROM soy2_sample WHERE id = :id;";
 try{
-	$results = $dao->executeQuery($sql);
+	$results = $dao->executeQuery($sql, array(":id" => 1));
 	var_dump($results);
 }catch(Exception $e){
 	var_dump($e);
 }
 
-$sql = "UPDATE soy2_sample SET text = 'huga' WHERE id = 1";
+$sql = "UPDATE soy2_sample SET text = :text WHERE id = :id";
 try{
-	$dao->executeUpdateQuery($sql);
+	$dao->executeUpdateQuery($sql, array(":text" => "huga", ":id" => 1));
 }catch(Exception $e){
 	var_dump($e);
 }
 
-$sql = "SELECT * FROM soy2_sample;";
+$sql = "SELECT * FROM soy2_sample WHERE id = :id;";
 try{
-	$results = $dao->executeQuery($sql);
+	$results = $dao->executeQuery($sql, array(":id" => 1));
 	var_dump($results);
 }catch(Exception $e){
 	var_dump($e);
