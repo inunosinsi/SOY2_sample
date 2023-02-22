@@ -5,7 +5,6 @@ if(!class_exists("SOY2")) include_once(WEBAPP_DIR . "lib/soy2_build.php");
 
 //SQLiteのインメモリを使用
 SOY2DAOConfig::Dsn("sqlite::memory:");
-SOY2DAOConfig::DaoCacheDir(WEBAPP_DIR . "/cache/");
 
 $dao = new SOY2DAO();
 $sql = "CREATE TABLE soy2_sample (
