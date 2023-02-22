@@ -11,6 +11,9 @@ abstract class SOY2SampleDAO extends SOY2DAO {
 
 	abstract function update(SOY2Sample $bean);
 
+	/**
+	 * @return list
+	 */
 	abstract function get();
 
 	/**
