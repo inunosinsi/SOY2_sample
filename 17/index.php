@@ -29,3 +29,18 @@ try{
 }catch(Exception $e){
 	var_dump($e);
 }
+
+$sql = "UPDATE soy2_sample SET text = 'huga' WHERE id = 1";
+try{
+	$dao->executeUpdateQuery($sql);
+}catch(Exception $e){
+	var_dump($e);
+}
+
+$sql = "SELECT * FROM soy2_sample;";
+try{
+	$results = $dao->executeQuery($sql);
+	var_dump($results);
+}catch(Exception $e){
+	var_dump($e);
+}

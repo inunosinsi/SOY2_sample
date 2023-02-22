@@ -31,7 +31,7 @@ class PageController extends SOY2PageController{
 
 		include(WEBAPP_DIR."layout/main.php");
 		exit;
-    }
+	}
 
 	function onNotFound(string $path="", array $args=array(), string $classPath=""){
 		header("HTTP/1.1 404 Not Found");
