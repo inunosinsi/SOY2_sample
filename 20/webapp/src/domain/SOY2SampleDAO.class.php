@@ -19,5 +19,5 @@ abstract class SOY2SampleDAO extends SOY2DAO {
 	/**
 	 * @return object
 	 */
-	abstract function getById($id);
+	abstract function getById(int $id);
 }
