@@ -50,4 +50,4 @@ try{
 	var_dump($e);
 }
 
-//var_dump($res);
+var_dump($res);
