@@ -7,7 +7,7 @@ class ClassPathBuilder extends SOY2_DefaultClassPathBuilder{
 	 * @return string
 	 */
 	function getClassPath(string $path){
-		if(is_bool(strpos($path, "."))) return $path;
+		if(!strlen($path)) return "";
 		$arr = explode(".", $path);
 		$arr[count($arr)-1] = ucfirst($arr[count($arr)-1]);	// 配列内の最後の値の頭文字を大文字にする
 		return implode(".", $arr);
