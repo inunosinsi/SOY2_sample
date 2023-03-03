@@ -9,4 +9,4 @@ SOY2::RootDir(WEBAPP_DIR . "src/");
 SOY2DAOConfig::Dsn("sqlite::memory:");
 SOY2DAOConfig::DaoDir(SOY2::RootDir() . "domain/");
 SOY2DAOConfig::EntityDir(SOY2DAOConfig::DaoDir());
-SOY2DAOConfig::DaoCacheDir(WEBAPP_DIR . "/cache/");
+SOY2DAOConfig::DaoCacheDir(WEBAPP_DIR . "cache/");
