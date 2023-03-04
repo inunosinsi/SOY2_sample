@@ -6,9 +6,7 @@ class IndexPage extends WebPage {
 		parent::__construct();
 
 		$this->createAdd("register_link", "HTMLLink", array(
-			"link" => SOY2PageController::createRelativeLink("detail"),
-			"target" => "_blank",
-			"rel" => "noopener"
+			"link" => SOY2PageController::createRelativeLink("detail")
 		));
 	}
 }

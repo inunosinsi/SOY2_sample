@@ -20,7 +20,7 @@ class UserLogic extends SOY2LogicBase {
 		}else{	// 新規登録の手続き用
 			$user = SOY2::cast("User", $arr);
 		}
-		
+
 		// $user->getId()がnull値の場合は新規登録　整数値である場合は更新
 		if(is_null($user->getId())){
 			try{
