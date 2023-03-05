@@ -7,6 +7,7 @@ class UserLogic extends SOY2LogicBase {
 	private $offset = 0;
 
 	/**
+	 * soy2_userテーブルに対して、レコードの登録と更新を行う
 	 * @param array
 	 * @return int
 	 */
@@ -20,7 +21,7 @@ class UserLogic extends SOY2LogicBase {
 		}else{	// 新規登録の手続き用
 			$user = SOY2::cast("User", $arr);
 		}
-
+		
 		// $user->getId()がnull値の場合は新規登録　整数値である場合は更新
 		if(is_null($user->getId())){
 			try{
@@ -42,6 +43,7 @@ class UserLogic extends SOY2LogicBase {
 	}
 
 	/**
+	 * 任意の件数のレコードを取得し、Userオブジェクトの配列に変換して返す
 	 * @return array
 	 */
 	function get(){
@@ -62,6 +64,7 @@ class UserLogic extends SOY2LogicBase {
 	}
 
 	/**
+	 * 任意のIDのレコードを取得し、Userオブジェクトに変換して返す
 	 * @param int
 	 * @return User
 	 */

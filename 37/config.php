@@ -22,8 +22,10 @@ SOY2DAOConfig::DaoCacheDir(WEBAPP_DIR . "cache/");
 // init db file.
 if(!file_exists($dbpath)){
 	$dao = new SOY2DAO();
-    $dao->begin();
-    $sqls = preg_split('/CREATE TABLE/', file_get_contents(SOY2::RootDir() . "sql/init_sqlite.sql"), -1, PREG_SPLIT_NO_EMPTY) ;
+	
+	// transaction https://saitodev.co/soycms/soy2/tutorial/203
+	$dao->begin();
+	$sqls = preg_split('/CREATE TABLE/', file_get_contents(SOY2::RootDir() . "sql/init_sqlite.sql"), -1, PREG_SPLIT_NO_EMPTY) ;
 	foreach($sqls as $sql){
 		try{
 			$dao->executeQuery("CREATE TABLE " . trim($sql));
