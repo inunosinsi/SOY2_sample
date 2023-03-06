@@ -10,6 +10,8 @@ class DetailPage extends WebPage {
 			if($this->id > 0){
 				$_POST["User"]["id"] = $this->id;
 			}
+
+			// $_POST["User"]の配列をそのままUserLogic.class.phpのsaveメソッドに渡す
 			$id = SOY2Logic::createInstance("logic.UserLogic")->save($_POST["User"]);
 			if($id > 0){	// 登録成功
 				SOY2PageController::redirect("detail/".$id);
