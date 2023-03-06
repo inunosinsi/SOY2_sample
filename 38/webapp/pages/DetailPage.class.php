@@ -26,6 +26,7 @@ class DetailPage extends WebPage {
 	}
 
 	function __construct($args){
+		// PageControllerの方で渡したargumentsの値が$argsに格納されている
 		$this->id = (isset($args[0])) ? (int)$args[0] : 0;
 
 		parent::__construct();
