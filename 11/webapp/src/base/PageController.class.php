@@ -5,6 +5,8 @@ class PageController extends SOY2PageController{
     function execute(){
 		// SOY2HTMLConfig::PageDirで指定したディレクトリからページのクラスファイルを読み込む
 		$reqUri = (isset($_SERVER["REQUEST_URI"])) ? ltrim($_SERVER["REQUEST_URI"], "/") : "";
+		// GETパラメータがある場合は除く
+		if(is_numeric(strpos($reqUri, "?"))) $reqUri = substr($reqUri, 0, strpos($reqUri, "?"));
 		$dirs = explode("/", $reqUri);
 		$pageType = (isset($dirs[0]) && strlen($dirs[0])) ? ucfirst($dirs[0]) : "Input";
 
